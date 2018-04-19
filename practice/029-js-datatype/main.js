@@ -1,67 +1,67 @@
 // 
-var a = {
-    a1: [
-      'a', 'b', { v: 666 }
-    ]
-  }
+// var a = {
+//     a1: [
+//       'a', 'b', { v: 666 }
+//     ]
+//   }
   
-  console.log(a.a1[2].v);
+//   console.log(a.a1[2].v);
   
-  var b = [
-    1, 3, 'a', {
-      b2: {
-        a: 1,
-        v: 7,
-        c: [{z: 666}]
-      }
-    }
-  ]
+//   var b = [
+//     1, 3, 'a', {
+//       b2: {
+//         a: 1,
+//         v: 7,
+//         c: [{z: 666}]
+//       }
+//     }
+//   ]
 
-  console.log(b[3].b2.c[0].z);
+//   console.log(b[3].b2.c[0].z);
   
   
-  var c = {
-    a: {
-      u: 1,
-      d: {
-        o: {
-          z: { 1: 2, y: [1, 2] }
-        },
-        p: {
-          yo: [3, 5, 666]
-        }
-      }
-    }
-  }
+//   var c = {
+//     a: {
+//       u: 1,
+//       d: {
+//         o: {
+//           z: { 1: 2, y: [1, 2] }
+//         },
+//         p: {
+//           yo: [3, 5, 666]
+//         }
+//       }
+//     }
+//   }
   
-console.log(c.a.d.p.yo[2]);
+// console.log(c.a.d.p.yo[2]);
 
 
-  var d = [
-    [1, 3, 'abc'],
-    [
-      'muhaha',
-      { d: 1, v: ['a', 'b', { z: 666 }] }
-    ]
-  ]
+//   var d = [
+//     [1, 3, 'abc'],
+//     [
+//       'muhaha',
+//       { d: 1, v: ['a', 'b', { z: 666 }] }
+//     ]
+//   ]
 
-  console.log(d[1][1].v[2].z);
+//   console.log(d[1][1].v[2].z);
   
   
-  var e = {
-    a: [3, {
-      b: 1,
-      v: [1, 3, {
-        p: 666
-      }]
-    }, 9]
-  }
+//   var e = {
+//     a: [3, {
+//       b: 1,
+//       v: [1, 3, {
+//         p: 666
+//       }]
+//     }, 9]
+//   }
 
-console.log(e.a[1].v[2].p)
+// console.log(e.a[1].v[2].p)
 
 /* 打印出“我叫王花花，我今年18岁了” */
 
-var person = {
+var  person = {
   name: '王花花',
   age: 18,
 }
@@ -167,6 +167,6 @@ var person5 = {
   },
 }
 
-var ave = (person5.wife.dad.friends[0].averageScore+person5.wife.dad.friends[1].averageScore+person5.wife.dad.friends[2].averageScore)/person5.wife.dad.friends.length;
+var ave = (person5.wife.dad.friends[0].averageScore+person5.wife.dad.friends[1].averageScore*3+person5.wife.dad.friends[2].averageScore*5)/(person5.wife.dad.friends[0].children+person5.wife.dad.friends[1].children+person5.wife.dad.friends[2].children);
 var f = '我叫' + person5.name + '，我丈人朋友们的孩子们的平均分是' + ave;
 console.log(f);
