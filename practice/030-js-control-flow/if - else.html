@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>CohanZo</title>
+</head>
+<body>
+    <!-- <h1>yo</h1>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit</p> -->
+    <input type="number" id="age" placeholder="年龄">
+    <input type="text" id="name" placeholder="姓名">    
+    <script>
+        // 三种网页弹出模式
+        confirm('asdada');
+        alert('asdas');
+        var age = prompt('adasd');
+
+        //取到<input>中的值
+        var ageElement = document.querySelector('#age');
+        var nameElement = document.querySelector('#name');
+
+        //当<input id="age">发生改变时执行后面的函数
+        ageElement.addEventListener('change',function () {
+
+        var age = ageElement.value.trim(); //取到<input>中的值
+        age = parseInt(age); //将字符串string转换为数字类型num
+
+        if (!age && age != 0) {
+            console.log('年龄不能为空');   
+        } else if (age < 1) {
+            console.log('你逗我呢');
+        } else if (age == 18) {
+            console.log('刚成年');
+        } else if (age > 18 && age < 40) {
+            console.log('青年');
+        } else if (age >= 40 && age < 60) {
+            console.log('中年');
+        } else if (age >= 60) {
+            console.log('老咯');
+        } else {
+            console.log('yo');
+        }
+
+        })
+
+        nameElement.addEventListener('keyup',function() {
+        var name = nameElement.value.trim();
+
+        if (!name) {
+            console.log('取个名字啊好啊？');
+        } else if (name.length > 9) {
+            console.log("不要太长啊行啊？");
+        } else if (name.length < 3) {
+            console.log("不要太短啊行啊？");
+        } else {
+            console.log(name + '，吊名字难听的一笔');
+        }
+  
+        })
+    </script>    
+</body>
+</html>

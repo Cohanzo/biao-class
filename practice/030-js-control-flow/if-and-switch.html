@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" id="name" placeholder="姓名">
+    <script>
+        var nameElement = document.querySelector('#name');
+        nameElement.addEventListener('change',function(){
+            var name = nameElement.value.trim();
+            switch(name) {
+                case 'whh':
+                    console.log('hellowhh');
+                    break;
+                case 'lqd':
+                    console.log('huanwoqian');
+                    break;
+                case 'zks':
+                    console.log('zuijhaoma');
+                    break;
+                default:
+                    console.log('buyue');
+                    break;
+            }
+        })
+    </script>
+</body>
+</html>
