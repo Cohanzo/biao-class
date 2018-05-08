@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" id="name" placeholder="姓名">
+    <script>
+        var nameElement = document.querySelector('#name');
+        nameElement.addEventListener('change',function(){
+            var name = nameElement.value.trim();
+            switch(name) {
+                case '王花花':
+                    console.log('你好啊');
+                    // break;
+                case '李全蛋':
+                    console.log('还我钱');
+                    break;
+                case '赵克瑟':
+                case '强东玥':
+                    console.log('最近好吗');
+                    break;
+                default:
+                    console.log('不约');
+                    break;
+            }
+        })
+    </script>
+</body>
+</html>
