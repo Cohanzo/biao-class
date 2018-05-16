@@ -1,0 +1,30 @@
+<a href="http://baidu.com" class="trigger" style="background: pink;">YL</a>
+
+<input type="text" class="search" style="border: 1px solid black">
+
+<script>
+    ;
+    (function () {
+        'use strict';
+
+        var trigger = document.querySelector('.trigger');
+        var search = document.querySelector('.search');
+
+        trigger.addEventListener('mouseenter', function () {
+            console.log('mouseenter');
+        });
+
+        trigger.addEventListener('mouseleave', function () {
+            console.log('mouseleave');
+        });
+
+        search.addEventListener('focus', function () {
+            console.log('已聚焦');
+        });
+
+        search.addEventListener('blur', function () {
+            console.log('已失焦');
+        });
+
+    })();
+</script>

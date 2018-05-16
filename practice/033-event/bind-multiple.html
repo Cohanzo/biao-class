@@ -1,0 +1,21 @@
+<a href="http://baidu.com" class="trigger">Yoo1</a>
+<a href="http://baidu.com" class="trigger">Yoo2</a>
+<a href="http://baidu.com" class="trigger">Yoo3</a>
+
+<script>
+    ;(function(){
+        'use strict';
+
+        var triggerList = document.querySelectorAll('.trigger');
+        
+        for (var i = 0; i < triggerList.length; i++) {
+            var trigger = triggerList[i];
+
+            trigger.addEventListener('click',function(){
+                event.preventDefault();
+                console.log('yll');
+            });    
+        }
+
+    })();
+</script>

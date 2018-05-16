@@ -1,0 +1,130 @@
+<div class="row nav">
+    <div class="container">
+        <div class="col left">
+            <a href="#">item</a>
+            <a href="#">item</a>
+            <a href="#">item</a>
+            <a href="#">item</a>
+        </div>
+        <div class="col right">
+            <a href="#">item</a>
+            <a href="#" id="menuTrigger">menu</a>
+        </div>
+        <div id="menuContent">
+            <a href="#">item</a>
+            <a href="#">item</a>
+            <a href="#">item</a>
+            <a href="#">item</a>
+        </div>
+    </div>
+</div>
+
+<style>
+    body {
+        margin: 0;
+        font-family: sans-serif;
+    }
+
+    a {
+        text-decoration: none;
+        display: inline-block;
+    }
+
+    .container {
+        max-width: 500px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .row {
+        font-size: 0;
+    }
+
+    .col {
+        display: inline-block;
+        vertical-align: top;
+        font-size: 15px;
+    }
+
+    .col.left,
+    .col.right {
+        width: 50%;
+    }
+
+    .left {
+        text-align: left;
+    }
+
+    .right {
+        text-align: right;
+    }
+
+    .nav {
+        line-height: 1;
+    }
+
+    .nav .container {
+        position: relative;
+    }
+
+    .nav a {
+        padding: 5px;
+    }
+
+    .nav,
+    #menuContent {
+        background: #aaa;
+    }
+
+    #menuContent {
+        display: none;
+        font-size: 15px;
+        width: 100px;
+        position: absolute;
+        right: 0;
+        top: 24px;
+        text-align: center;
+    }
+
+    #menuContent a {
+        display: block;
+    }
+</style>
+
+<script>
+    /*先选中菜单触发器*/
+    var menuTrigger = document.querySelector('#menuTrigger'),
+        menuContent = document.querySelector('#menuContent');
+
+    /*当触发器被点击时*/
+    menuTrigger.addEventListener('click',function(event){
+        event.preventDefault();
+
+        menuTrigger.focus();
+        
+    })
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</script>

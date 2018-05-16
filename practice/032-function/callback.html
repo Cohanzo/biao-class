@@ -1,0 +1,135 @@
+<!-- <script>
+    ;
+    (function () {
+        'use strict';
+
+        function makeMeal(attatch) {
+            console.log('buy');
+            if (attatch) {
+                attatch();
+            }
+
+            console.log('water');
+            console.log('make');
+        }
+
+        function buyPen() {
+            console.log('pen');
+        }
+
+        makeMeal(buyPen);
+
+    })();
+</script> -->
+
+
+<!-- <script>
+    function beforeSleep(doSth) {
+        if (doSth) {
+            doSth();
+        }
+
+        console.log('goodnight!');
+
+    }
+
+    function brushTeath() {
+        console.log('teethPlease~');
+    }
+
+    beforeSleep(brushTeath);
+</script>
+
+<script>
+    // 买游戏或者买衣服
+    function buy(money, success, fail) {
+        if (money > 0) {  
+            console.log('下单成功'); // 付钱了就下单成功
+            if (success) {
+                success();         // 然后执行购买成功的函数function
+            }
+        } else {
+            console.log('下单失败'); // 没付钱就下单失败
+            if (fail) {
+                fail();            // 然后执行购买失败的函数function
+            }
+        }
+    }
+
+    // 购买游戏成功的函数，购买成功时代码被执行
+    function onGameOrderSuccess() {
+        console.log('游戏单，无需实体发货');
+    }
+
+    // 购买T恤成功的函数，购买成功时代码被执行
+    function onTshirtOrderSuccess() {
+        console.log('服饰单，通知仓库发货中...');
+    }
+
+    // 购买游戏或T恤失败的函数，购买失败时代码被执行
+    function onOrderFail() {
+        console.log('付钱先');
+    }
+
+    buy(100, onGameOrderSuccess, onOrderFail);  // 付了100买游戏，下单成功
+    buy(0, onTshirtOrderSuccess, onOrderFail);  // 不付钱想买T恤，赶紧滚蛋
+</script> -->
+
+<!-- <script>
+    function buy(money, success, fail){
+        if(money > 0){
+            console.log('下单成功');
+            if(success){
+                success();
+            }
+        } else {
+            console.log('下单失败');
+            if(fail){
+                fail();
+            }
+        }
+    }
+
+    function onGameOrderSuccess(){
+        console.log('游戏购买成功，虚拟货物');
+    }
+
+    function onTshirtOrderSuccess(){
+        console.log('T恤购买成功，仓库出货中...');
+    }
+
+    function onOrderFail(){
+        console.log('giveMeMoney');
+    }
+
+    buy(0,onGameOrderSuccess,onOrderFail);
+    buy(100,onTshirtOrderSuccess,onOrderFail);
+
+</script> -->
+
+<script>
+    function fit(time, goToFit, notToGo) {
+        if (time > 6) {
+            console.log('出门去健身吧死胖子');
+            if (goToFit) {
+                goToFit('run');
+            }
+        } else {
+            console.log('胖死你算了');
+            if (notToGo) {
+                notToGo();
+            }
+        }
+    }
+
+    function noPainNoGain(way) {
+        console.log('我要' + way + '健身了，你自重');
+    }
+
+    function pleaseDie() {
+        console.log('一辈子死肥宅，一辈子单身狗');
+    }
+
+    fit(7, noPainNoGain,  null);
+    // fit(2, null, pleaseDie);
+</script>
