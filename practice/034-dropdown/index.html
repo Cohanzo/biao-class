@@ -1,24 +1,3 @@
-<div class="row nav">
-    <div class="container">
-        <div class="col left">
-            <a href="#">item</a>
-            <a href="#">item</a>
-            <a href="#">item</a>
-            <a href="#">item</a>
-        </div>
-        <div class="col right">
-            <a href="#">item</a>
-            <a href="#" id="menuTrigger">menu</a>
-        </div>
-        <div id="menuContent">
-            <a href="#">item</a>
-            <a href="#">item</a>
-            <a href="#">item</a>
-            <a href="#">item</a>
-        </div>
-    </div>
-</div>
-
 <style>
     body {
         margin: 0;
@@ -59,12 +38,15 @@
         text-align: right;
     }
 
+    /*========================*/
+
     .nav {
         line-height: 1;
     }
 
     .nav .container {
         position: relative;
+        mpce
     }
 
     .nav a {
@@ -72,11 +54,11 @@
     }
 
     .nav,
-    #menuContent {
+    #menu-content {
         background: #aaa;
     }
 
-    #menuContent {
+    #menu-content {
         display: none;
         font-size: 15px;
         width: 100px;
@@ -86,45 +68,70 @@
         text-align: center;
     }
 
-    #menuContent a {
+    #menu-content a {
         display: block;
     }
 </style>
 
+<div class="row nav">
+    <div class="container">
+        <div class="col left">
+            <a href="#">Item</a>
+            <a href="#">Item</a>
+            <a href="#">Item</a>
+            <a href="#">Item</a>
+            <a href="#">Item</a>
+        </div>
+        <div class="col right">
+            <a href="#">Item</a>
+            <a id="menu-trigger" href="#">MENU</a>
+        </div>
+        <div id="menu-content">
+            <a href="#">Item</a>
+            <a href="#">Item</a>
+            <a href="#">Item</a>
+            <a href="#">Item</a>
+        </div>
+    </div>
+</div>
+
 <script>
     /*先选中菜单触发器*/
-    var menuTrigger = document.querySelector('#menuTrigger'),
-        menuContent = document.querySelector('#menuContent');
+    var menu_trigger = document.querySelector('#menu-trigger'),
+        menu_content = document.querySelector('#menu-content');
 
     /*当触发器被点击时*/
-    menuTrigger.addEventListener('click',function(event){
-        event.preventDefault();
+    menu_trigger.addEventListener('click', function (e) {
+        /*防止跳转（因为触发器是<a>所以有默认跳转的行为）*/
+        e.preventDefault();
 
-        menuTrigger.focus();
-        
+        /*当用户点击menu_trigger的时候将其聚焦（为了方便之后点击别的地方触发blur事件）*/
+        menu_trigger.focus();
+
+        /*如果当前菜单可见（如果是inline-block说明可见）*/
+        if (is_visible()) {
+            /*就隐藏它*/
+            hide();
+        } else {
+            /*否则就显示它*/
+            show();
+        }
+    });
+
+    /*当menu_trigger失焦的时候，将menu_content隐藏*/
+    menu_trigger.addEventListener('blur', function () {
+        hide();
     })
 
+    function show() {
+        menu_content.style.display = 'inline-block';
+    }
 
+    function hide() {
+        menu_content.style.display = 'none';
+    }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    function is_visible() {
+        return menu_content.style.display == 'inline-block';
+    }
 </script>
