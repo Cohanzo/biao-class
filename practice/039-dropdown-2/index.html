@@ -1,0 +1,135 @@
+<style>
+    body {
+        margin: 0;
+        font-family: sans-serif;
+    }
+
+    a {
+        text-decoration: none;
+        display: inline-block;
+    }
+
+    input {
+        max-width: 100%;
+    }
+
+    .container {
+        max-width: 500px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .row {
+        font-size: 0;
+    }
+
+    .col {
+        display: inline-block;
+        vertical-align: top;
+        font-size: 15px;
+    }
+
+    .col.left,
+    .col.right {
+        width: 50%;
+    }
+
+    .left {
+        text-align: left;
+    }
+
+    .right {
+        text-align: right;
+    }
+
+    /*========================*/
+
+    .nav {
+        line-height: 1;
+    }
+
+    .nav .container {
+        position: relative;
+    }
+
+    .nav a {
+        padding: 5px;
+    }
+
+    .nav,
+    #menuContent {
+        background: #aaa;
+    }
+
+    #menuContent {
+        display: none;
+        font-size: 15px;
+        width: 240px;
+        position: absolute;
+        right: 0;
+        top: 24px;
+        text-align: center;
+    }
+
+    #menuContent a {
+        display: block;
+    }
+
+    #menuContent.show {
+        display: inline-block;
+    }
+</style>
+
+<div class="row nav">
+    <div class="container">
+        <div class="col left">
+            <a href="#">Item</a>
+            <a href="#">Item</a>
+            <a href="#">Item</a>
+            <a href="#">Item</a>
+            <a href="#">Item</a>
+        </div>
+        <div class="col right">
+            <a href="#">Item</a>
+            <a id="menuTrigger" href="#">MENU</a>
+        </div>
+        <div id="menuContent">
+            <h3>登录</h3>
+            <input type="text">
+            <br>
+            <input type="text">
+            <br>
+            <button>登录</button>
+        </div>
+    </div>
+</div>
+
+<script>
+    var menuTrigger = document.querySelector('#menuTrigger'),
+        menuContent = document.querySelector('#menuContent');
+
+    function visible() {
+        return menuContent.classList.contains('show');
+    }
+
+    function show() {
+        menuContent.classList.add('show');
+    }
+
+    function hide() {
+        menuContent.classList.remove('show');
+    }
+
+    menuTrigger.addEventListener('click', function () {
+        visible() ? hide() : show();
+    });
+
+    document.addEventListener('click',function(e){
+        var el = e.target;
+        var menu = el.closest('#menuContent');
+
+        if(!menu && el !== menuTrigger){
+            hide();
+        }
+    })
+</script>
