@@ -65,27 +65,26 @@
     var modal = document.querySelector('.modal');
     var close = document.querySelector('.close');
 
-    function show(){
+    function show() {
         mask.classList.add('show');
         modal.classList.add('show');
     }
 
-    function hide(){
+    function hide() {
         mask.classList.remove('show');
         modal.classList.remove('show');
     }
 
-    login.addEventListener('click',show);
+    login.addEventListener('click', show);
 
-    close.addEventListener('click',hide);
+    close.addEventListener('click', hide);
 
-    mask.addEventListener('click',hide);
+    mask.addEventListener('click', hide);
 
-    document,addEventListener('keyup',function(event){
-        if(event.code !== 'Escape'){
+    document, addEventListener('keyup', function (event) {
+        if (event.code !== 'Escape') {
             return;
         }
         hide();
     });
-
 </script>
