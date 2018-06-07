@@ -1,0 +1,85 @@
+<style>
+    * {
+        vertical-align: middle;
+    }
+
+    body {
+        font-family: sans-serif;
+        font-size: 20px;
+    }
+
+    label {
+        display: block;
+        padding: 5px;
+        user-select: none;
+    }
+
+    label:hover {
+        background: rgba(0, 0, 255, .1);
+    }
+
+    button {
+        padding: 5px 10px;
+        border: 1px solid rgba(0, 0, 0, .2);
+    }
+
+    .toolbar {
+        margin-bottom: 10px;
+    }
+</style>
+
+<div class="toolbar">
+    <button id="all">all</button>
+    <button id="none">none</button>
+    <button id="reverse">reverse</button>
+</div>
+
+<label>
+    <input type="checkbox"> Item
+</label>
+<label>
+    <input type="checkbox"> Item
+</label>
+<label>
+    <input type="checkbox"> Item
+</label>
+<label>
+    <input type="checkbox"> Item
+</label>
+<label>
+    <input type="checkbox"> Item
+</label>
+<label>
+    <input type="checkbox"> Item
+</label>
+<label>
+    <input type="checkbox"> Item
+</label>
+<label>
+    <input type="checkbox"> Item
+</label>
+
+<script>
+    var all = document.querySelector('#all'),
+        none = document.querySelector('#none'),
+        reverse = document.querySelector('#reverse'),
+        list = document.querySelectorAll('[type=checkbox]');
+
+    all.addEventListener('click', function () {
+        list.forEach(function (item) {
+            item.checked = true;
+        })
+    });
+
+    none.addEventListener('click', function () {
+        list.forEach(function (item) {
+            item.checked = false;
+        })
+    });
+
+    reverse.addEventListener('click', function () {
+        list.forEach(function (item) {
+            item.checked = !item.checked;
+        })
+    });
+</script>
