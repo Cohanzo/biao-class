@@ -1,0 +1,71 @@
+<style>
+    [hidden] {
+        display: none;
+    }
+
+    body {
+        margin: 0;
+        font-family: sans-serif;
+    }
+
+    nav {
+        background: #777;
+    }
+
+    nav>* {
+        padding: 10px;
+        cursor: pointer;
+        display: inline-block;
+    }
+
+    #menuContent {
+        display: block;
+        background: #444;
+        position: fixed;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        width: 300px;
+        color: #fff;
+        transition: left .5s;
+    }
+
+    #menuContent>* {
+        padding: 15px 20px;
+    }
+
+    #menuContent>div:hover {
+        background: rgba(0, 0, 0, .1);
+    }
+
+    #menuContent[hidden] {
+        left: -100%;
+    }
+</style>
+
+
+<nav>
+    <span id="menuTrigger">MENU</span>
+</nav>
+
+<div id="menuContent" hidden>
+    <div id="menuClose">sohuqi</div>
+    <div>item</div>
+    <div>item</div>
+    <div>item</div>
+    <div>item</div>
+</div>
+
+<SCript>
+    var menuTrigger = document.querySelector('#menuTrigger'),
+        menuContent = document.querySelector('#menuContent'),
+        menuClose = document.querySelector('#menuClose');
+
+    menuTrigger.addEventListener('click', function () {
+        menuContent.hidden = !menuContent.hidden;
+    });
+
+    menuClose.addEventListener('click', function () {
+        menuContent.hidden = true;
+    });
+</SCript>
