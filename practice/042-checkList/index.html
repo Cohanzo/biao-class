@@ -59,10 +59,9 @@
     <input type="checkbox"> Item
 </label>
 
-<script>
+<!-- <script>
     var all = document.querySelector('#all'),
         none = document.querySelector('#none'),
-        reverse = document.querySelector('#reverse'),
         list = document.querySelectorAll('[type=checkbox]');
 
     all.addEventListener('click', function () {
@@ -70,18 +69,32 @@
             item.checked = true;
         })
     });
+</script>
+
+<script>
+    var none = document.querySelector('#none'),
+        list = document.querySelectorAll('[type=checkbox]');
 
     none.addEventListener('click', function () {
         list.forEach(function (item) {
             item.checked = false;
         })
     });
+</script>
+
+<script>
+    var reverse = document.querySelector('#reverse'),
+        list = document.querySelectorAll('[type=checkbox]');
 
     reverse.addEventListener('click', function () {
         list.forEach(function (item) {
             item.checked = !item.checked;
         })
     });
+</script> -->
+
+<script>
+    var list = document.querySelectorAll('[type=checkbox]');
 
     // 4.写一个除了被点击的item其他都不选择的函数
     function uncheckedAll(except) {
