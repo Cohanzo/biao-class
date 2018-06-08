@@ -82,4 +82,27 @@
             item.checked = !item.checked;
         })
     });
+
+    // 4.写一个除了被点击的item其他都不选择的函数
+    function uncheckedAll(except) {
+        // 5.迭代所有元素 
+        list.forEach(function (item) {
+            // 6.除了被点击的这个
+            if (item === except) {
+                return;
+            }
+
+            // 7.其他都不选择
+            item.checked = false;
+        })
+    }
+
+    // 1.先迭代所有list里的item
+    list.forEach(function (item) {
+        // 2.给item绑定点击事件 
+        item.addEventListener('click', function () {
+            // 3.当某个item被点击时，执行这个函数，同时返回函数，返回当前被点击的元素
+            uncheckedAll(this);
+        })
+    })
 </script>
