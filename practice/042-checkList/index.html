@@ -93,7 +93,7 @@
     });
 </script> -->
 
-<script>
+<!-- <script>
     var list = document.querySelectorAll('[type=checkbox]');
 
     // 4.写一个除了被点击的item其他都不选择的函数
@@ -113,9 +113,13 @@
     // 1.先迭代所有list里的item
     list.forEach(function (item) {
         // 2.给item绑定点击事件 
-        item.addEventListener('click', function () {
+        item.addEventListener('click', function (e) {
+            if(e.ctrlKey || e.metaKey)
+                return;
+
             // 3.当某个item被点击时，执行这个函数，同时返回函数，返回当前被点击的元素
             uncheckedAll(this);
         })
     })
-</script>
+</script> -->
+
