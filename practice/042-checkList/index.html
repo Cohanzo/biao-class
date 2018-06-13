@@ -58,6 +58,60 @@
 <label>
     <input type="checkbox"> Item
 </label>
+<label>
+    <input type="checkbox"> Item
+</label>
+<label>
+    <input type="checkbox"> Item
+</label>
+<label>
+    <input type="checkbox"> Item
+</label>
+<label>
+    <input type="checkbox"> Item
+</label>
+<label>
+    <input type="checkbox"> Item
+</label>
+<label>
+    <input type="checkbox"> Item
+</label>
+<label>
+    <input type="checkbox"> Item
+</label>
+<label>
+    <input type="checkbox"> Item
+</label>
+<label>
+    <input type="checkbox"> Item
+</label>
+<label>
+    <input type="checkbox"> Item
+</label>
+<label>
+    <input type="checkbox"> Item
+</label>
+<label>
+    <input type="checkbox"> Item
+</label>
+<label>
+    <input type="checkbox"> Item
+</label>
+<label>
+    <input type="checkbox"> Item
+</label>
+<label>
+    <input type="checkbox"> Item
+</label>
+<label>
+    <input type="checkbox"> Item
+</label>
+<label>
+    <input type="checkbox"> Item
+</label>
+<label>
+    <input type="checkbox"> Item
+</label>
 
 <!-- <script>
     var all = document.querySelector('#all'),
@@ -123,3 +177,33 @@
     })
 </script> -->
 
+<script>
+    var list = document.querySelectorAll('[type=checkbox]');
+    var start,
+        startIndex,
+        endIndex;
+
+    function toggleBetween() {
+        list.forEach(function (item, index) {
+            if (startIndex < endIndex) {
+                if (index >= startIndex && index <= endIndex)
+                    item.checked = start.checked;
+            } else {
+                if (index <= startIndex && index >= endIndex)
+                    item.checked = start.checked;
+            }
+        });
+    }
+
+    list.forEach(function (item, index) {
+        item.addEventListener('click', function (e) {
+            if (e.shiftKey) {
+                endIndex = index;
+                toggleBetween();
+            } else {
+                startIndex = index;
+                start = this;
+            }
+        });
+    });
+</script>
