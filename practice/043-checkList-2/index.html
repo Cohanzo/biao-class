@@ -1,0 +1,151 @@
+<style>
+  * {
+    vertical-align: middle;
+  }
+
+  .toolbar {
+    margin-bottom: 10px;
+  }
+
+  label {
+    display: block;
+    padding: 5px 10px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+  }
+
+  label:hover {
+    background: rgba(0, 0, 255, 0.1);
+  }
+</style>
+
+<div class="toolbar">
+  <button id="all">全选</button>
+  <button id="none">全不选</button>
+  <button id="reverse">反选</button>
+</div>
+
+<label>
+  <input type="checkbox"> Item
+</label>
+<label>
+  <input type="checkbox"> Item
+</label>
+<label>
+  <input type="checkbox"> Item
+</label>
+<label>
+  <input type="checkbox"> Item
+</label>
+<label>
+  <input type="checkbox"> Item
+</label>
+<label>
+  <input type="checkbox"> Item
+</label>
+<label>
+  <input type="checkbox"> Item
+</label>
+<label>
+  <input type="checkbox"> Item
+</label>
+<label>
+  <input type="checkbox"> Item
+</label>
+<label>
+  <input type="checkbox"> Item
+</label>
+<label>
+  <input type="checkbox"> Item
+</label>
+<label>
+  <input type="checkbox"> Item
+</label>
+
+<script>
+  var all = document.querySelector('#all');
+  var list = document.querySelectorAll('[type=checkbox]');
+
+  all.addEventListener('click', function () {
+    list.forEach(function (item) {
+      item.checked = true;
+    })
+
+    for (var item of list) {
+      item.checked = true;
+    }
+
+    for (var i = 0; i < list.length; i++) {
+      var item = list[i];
+
+      item.checked = true;
+    }
+  })
+</script> -->
+
+<script>
+  var none = document.querySelector('#none');
+  var list = document.querySelectorAll('[type=checkbox]');
+
+  none.addEventListener('click', function () {
+    for (var item of list) {
+      item.checked = false;
+    }
+  })
+</script>
+
+<script>
+  var reverse = document.querySelector('#reverse');
+  var list = document.querySelectorAll('[type=checkbox]');
+
+  reverse.addEventListener('click', function () {
+    for (var item of list) {
+      item.checked = !item.checked;
+    }
+  })
+</script>
+
+<script>
+  var list = document.querySelectorAll('[type=checkbox]');
+
+  list.forEach(function (item) {
+    item.addEventListener('click', function (e) {
+      list.forEach(function (item2) {
+        if (item2 == item || e.ctrlKey || e.metaKey)
+          return;
+
+        item2.checked = false;
+      })
+    })
+  })
+</script>
+
+<script>
+  var list = document.querySelectorAll('[type=checkbox]'),
+    startIndex, endIndex, topDown, startSelected;
+
+  list.forEach(function (item, index) {
+    item.addEventListener('click', function (e) {
+      if (e.shiftKey) {
+        endIndex = index;
+        topDown = startIndex < endIndex;
+
+        list.forEach(function (item2, index2) {
+          var positive = index2 > startIndex || index2 < endIndex;
+          var negative = index2 < startIndex || index2 > endIndex;
+          var outOfScope = (topDown && negative) || (!topDown && positive);
+
+          if (outOfScope)
+            return;
+
+          item2.checked = startSelected;
+        })
+      } else {
+        startIndex = index;
+        startSelected = item.checked;
+      }
+    })
+  })
+</script>

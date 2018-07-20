@@ -179,29 +179,29 @@
 
 <script>
     var list = document.querySelectorAll('[type=checkbox]');
-    var start,
-        startIndex,
-        endIndex;
+    var start, startIndex, endIndex;
 
     function toggleBetween() {
-        list.forEach(function (item, index) {
+        list.forEach(function (item, i) {
             if (startIndex < endIndex) {
-                if (index >= startIndex && index <= endIndex)
+                if (i >= startIndex && i <= endIndex) {
                     item.checked = start.checked;
+                }
             } else {
-                if (index <= startIndex && index >= endIndex)
+                if (i <= startIndex && i >= endIndex) {
                     item.checked = start.checked;
+                }
             }
         });
     }
 
-    list.forEach(function (item, index) {
+    list.forEach(function (item, i) {
         item.addEventListener('click', function (e) {
             if (e.shiftKey) {
-                endIndex = index;
+                endIndex = i;
                 toggleBetween();
             } else {
-                startIndex = index;
+                startIndex = i;
                 start = this;
             }
         });
